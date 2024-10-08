@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/public/images/logo_alb.png">
+    <link rel="stylesheet" type="text/css" href="../public/style.css">
+    
+    <title>FotoUau</title>
+  </head>
+  <body>
+    <div id="menu">
+      <div id="logodiv">
+        <img src="../public/images/logo_FotoUau.png" id="logo">
+      </div>
+      {% block active_gallery %}
+      <a href="/" class="buton">Gallery</a>
+      {% endblock %}
+      {% block active_about %}
+      <a href="/about" class="buton">About me</a>
+      {% endblock %}
+
+      {% if session["authenticated"] %}
+        <a href="/logout" class="buton">Logout</a>
+      {% else %}
+        {% block active_login %}
+        <a href="/login" class="buton">Login</a>
+        {% endblock %}
+      {% endif %}
+      
+      <a href="https://www.google.com/search?sca_esv=5a8c8ac8ff46dd80&sxsrf=ADLYWIIjuUIViu2DNxDNpdKu1dEVMCWMHw:1716494812944&q=more&si=ACC90nxP-llVVa3oXeZWHl4VPWVYfkjo9kVbuohVYDYwSJ2mvfeEEA8g4hY5T3mYmObJKZAWptjPD4MpNq29LlKjbgLOx3Tdjg%3D%3D&expnd=1&sa=X&ved=2ahUKEwiz7tW8yaSGAxWiPhAIHfvdBZYQ2v4IegUIDxD_AQ&biw=1536&bih=703&dpr=1.25" target="blank" class="buton" id="more">More</a>
+    </div>
+    {% block sidebar %}
+    {% endblock %}
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    
+
+  </body>
+</html>

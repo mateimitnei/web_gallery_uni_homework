@@ -1,0 +1,17 @@
+{% extends "base_design.html" %}
+
+{% block active_login %}
+<a href="/login" class="buton active">Login</a>
+{% endblock %}
+
+{% block content %}
+<p class="form_title">LOGIN FORM</p>
+<form method="post">
+  <input type="text" name="username" placeholder="Username..." required>
+  <input type="password" name="password" placeholder="Password..." required>
+  <button type="submit">Login</button>
+  {% if error_msg %}
+    <div class="error" style="color: rgb(232, 0, 0);">{{ error_msg }}</div>
+  {% endif %}
+</form>
+{% endblock %}

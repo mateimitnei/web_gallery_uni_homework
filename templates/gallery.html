@@ -1,0 +1,44 @@
+{% extends "base_design.html" %}
+
+{% block active_gallery %}
+<a href="/" class="buton active">Gallery</a>
+{% endblock %}
+
+{% block sidebar %}
+<div id="sidebar">
+  {% if session["authenticated"] %}
+  <a href="/upload" class="buton" id="upload">Upload</a>
+  {% else %}
+  <p id="must_be">You must be logged in to upload images</p>
+  {% endif %}
+  <p id="navigation_title">Go to:</p>
+  {% for category in files %}
+  <a href="#{{ category }}" class="category_link">{{ category }}</a>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block content %}
+{% if session["authenticated"] %}
+    <!-- Code to display when user is authenticated -->
+    <p class="gallery_title">Welcome, {{ session["username"] }}!</p>
+{% else %}
+    <!-- Code to display when user is not authenticated -->
+    <p class="gallery_title">Photo gallery</p>
+{% endif %}
+
+{% for category, photos in files.items() %}
+<div class="category" id="{{ category }}">
+  <div class="category_title"><p>{{ category }}</p></div>
+  {% if photos %}
+    {% for photo in photos %}
+    <a href="{{ url_for('uploaded_file', filename=category + '/' + photo) }}" class="image">
+      <img src="{{ url_for('uploaded_file', filename=category + '/' + photo.rsplit('.', 1)[0] + '.thumb.' + photo.rsplit('.', 1)[1]) }}" alt="{{ photo }}">
+    </a>
+    {% endfor %}
+  {% else %}
+  <p style="color: gray">Empty</p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}
