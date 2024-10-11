@@ -12,7 +12,7 @@ design-ului. In schimb, le-am dat multor elemente proprietatea de flexbox care a
 aranjarea in pagina, in special la pozitionarea pozelor din galerie (si rearanjarea acestora
 la zoom in).
 
-Ruta default a serverului ("/") foloseste functia `index` cu care transmite categoriile cu
+Ruta default a serverului (`/`) foloseste functia `index` cu care transmite categoriile cu
 toate fisierele aferente prin "render_template('gallery.html', files=uploaded_files)".
 
 La ruta `/about` se incarca pagina `about.html`.
