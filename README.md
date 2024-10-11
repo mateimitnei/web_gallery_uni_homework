@@ -11,6 +11,7 @@ Password: `1`
 design-ului. In schimb, le-am dat multor elemente proprietatea de flexbox care a ajutat la
 aranjarea in pagina, in special la pozitionarea pozelor din galerie (si rearanjarea acestora
 la zoom in).
+
 Ruta default a serverului ("/") foloseste functia `index` cu care transmite categoriile cu
 toate fisierele aferente prin "render_template('gallery.html', files=uploaded_files)".
 
