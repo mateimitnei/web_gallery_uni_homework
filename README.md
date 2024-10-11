@@ -7,6 +7,9 @@ Password: `1`
 
 ## Descriere:
 
+Limbaje folosite: Python cu Flask pentru partea de server, HTML cu Jinja2 pentru paginile web si CSS
+pentru stilizare
+
 >Nu am folosit Bootstrap sau alt framework de css pentru ca am vrut sa am control complet asupra
 design-ului. In schimb, le-am dat multor elemente proprietatea de flexbox care a ajutat la
 aranjarea in pagina, in special la pozitionarea pozelor din galerie (si rearanjarea acestora
